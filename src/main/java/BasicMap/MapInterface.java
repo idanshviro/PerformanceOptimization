@@ -48,11 +48,7 @@ public class MapInterface {
     }
 
 
-    /**
-     * Represents a collection which offers a way to query the amount of its
-     * underlying elements.
-     *
-     */
+
     public interface Sizable {
         public long size();
     }
