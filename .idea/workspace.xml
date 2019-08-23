@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7cc01d1a-3c50-4288-8ac8-7faa0ec9a167" name="Default" comment="Benchmarks changes to include avg time and thread handing">
+    <list default="true" id="7cc01d1a-3c50-4288-8ac8-7faa0ec9a167" name="Default" comment="Benchmarks changes to include avg time and thread handing for the ActorMapBM">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jmh_benchmark/ActorMapBM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jmh_benchmark/ActorMapBM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <list id="7a09e33b-a2d4-4642-bfb3-5e515c2ea215" name="Revert &quot;Changing the naive solution&quot;" comment="Revert &quot;Changing the naive solution&quot;&#10;&#10;This reverts commit e2e0ebf9">
       <change beforePath="$PROJECT_DIR$/src/main/java/naive_map/NaiveTimedHashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/naive_map/NaiveTimedHashMap.java" afterDir="false" />
@@ -65,11 +65,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/naive_benchmarks/NaiveCompareBM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+            <state relative-caret-position="225">
+              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -144,6 +153,7 @@
       <find>Mode.Throughput,Mode.SampleTime</find>
       <find>threads</find>
       <find>thread</find>
+      <find>shit</find>
     </findStrings>
     <replaceStrings>
       <replace>Mode.Throughput,Mode.SampleTime,Mode.AverageTime</replace>
@@ -156,7 +166,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/test/java/sh/NaiveMapTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/first_map/NaiveMap.java" />
         <option value="$PROJECT_DIR$/src/main/java/sh/TestBM.java" />
         <option value="$PROJECT_DIR$/src/main/java/sh/App.java" />
@@ -185,6 +194,7 @@
         <option value="$PROJECT_DIR$/src/main/java/jmh_benchmark/GCMapBM.java" />
         <option value="$PROJECT_DIR$/src/main/java/jmh_benchmark/NaiveMapBM.java" />
         <option value="$PROJECT_DIR$/src/main/java/jmh_benchmark/ActorMapBM.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -494,7 +504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566551578069</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Benchmarks changes to include avg time and thread handing for the ActorMapBM">
+      <created>1566552185889</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1566552185889</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -545,7 +562,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24248926" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24248926" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -555,12 +572,12 @@
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.76283187" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.30120483" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.30120483" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32959184" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.40843374" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.40843374" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32891566" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.14336284" />
@@ -607,20 +624,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changing the naive solution" />
     <MESSAGE value="Benchmarks changes to include avg time and thread handing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Benchmarks changes to include avg time and thread handing" />
+    <MESSAGE value="Benchmarks changes to include avg time and thread handing for the ActorMapBM" />
+    <option name="LAST_COMMIT_MESSAGE" value="Benchmarks changes to include avg time and thread handing for the ActorMapBM" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/boot/AppTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="899">
-          <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -774,8 +785,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/naive_benchmarks/NaiveCompareBM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+        <state relative-caret-position="225">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
