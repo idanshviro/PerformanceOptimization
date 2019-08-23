@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7cc01d1a-3c50-4288-8ac8-7faa0ec9a167" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7cc01d1a-3c50-4288-8ac8-7faa0ec9a167" name="Default" comment="Benchmarks changes to include avg time and thread handing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jmh_benchmark/ActorMapBM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jmh_benchmark/ActorMapBM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jmh_benchmark/NaiveMapBM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jmh_benchmark/NaiveMapBM.java" afterDir="false" />
     </list>
     <list id="7a09e33b-a2d4-4642-bfb3-5e515c2ea215" name="Revert &quot;Changing the naive solution&quot;" comment="Revert &quot;Changing the naive solution&quot;&#10;&#10;This reverts commit e2e0ebf9">
       <change beforePath="$PROJECT_DIR$/src/main/java/naive_map/NaiveTimedHashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/naive_map/NaiveTimedHashMap.java" afterDir="false" />
@@ -26,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/jmh_benchmark/NaiveMapBM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="111" column="68" selection-start-line="111" selection-start-column="68" selection-end-line="111" selection-end-column="68" />
+            <state relative-caret-position="105">
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="23" />
               <folding>
                 <element signature="e#1027#1028#0" expanded="true" />
                 <element signature="e#1091#1092#0" expanded="true" />
@@ -67,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/naive_benchmarks/NaiveCompareBM.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
@@ -79,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/jmh_benchmark/ActorMapBM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1568">
-              <caret line="127" column="68" selection-start-line="127" selection-start-column="68" selection-end-line="127" selection-end-column="68" />
+            <state relative-caret-position="220">
+              <caret line="117" column="11" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="11" />
               <folding>
                 <element signature="e#1128#1129#0" expanded="true" />
                 <element signature="e#1194#1195#0" expanded="true" />
@@ -102,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/naive_map/NaiveTimedHashMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+            <state relative-caret-position="335">
+              <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
               <folding>
                 <element signature="e#587#588#0" expanded="true" />
                 <element signature="e#617#618#0" expanded="true" />
@@ -144,6 +142,8 @@
       <find>ask</find>
       <find>`</find>
       <find>Mode.Throughput,Mode.SampleTime</find>
+      <find>threads</find>
+      <find>thread</find>
     </findStrings>
     <replaceStrings>
       <replace>Mode.Throughput,Mode.SampleTime,Mode.AverageTime</replace>
@@ -487,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566550544220</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Benchmarks changes to include avg time and thread handing">
+      <created>1566551578069</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1566551578069</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -599,7 +606,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changing the naive solution" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing the naive solution" />
+    <MESSAGE value="Benchmarks changes to include avg time and thread handing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Benchmarks changes to include avg time and thread handing" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/boot/AppTest.java">
@@ -719,10 +727,25 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/gc_map/GCMap.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/jmh_benchmark/GCMapBM.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/naive_benchmarks/GCMapCompareSizeCall.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/naive_map/NaiveTimedHashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
+          <folding>
+            <element signature="e#587#588#0" expanded="true" />
+            <element signature="e#617#618#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#673#674#0" expanded="true" />
+            <element signature="e#3528#3529#0" expanded="true" />
+            <element signature="e#3588#3589#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jmh_benchmark/ActorMapBM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1568">
-          <caret line="127" column="68" selection-start-line="127" selection-start-column="68" selection-end-line="127" selection-end-column="68" />
+        <state relative-caret-position="220">
+          <caret line="117" column="11" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="11" />
           <folding>
             <element signature="e#1128#1129#0" expanded="true" />
             <element signature="e#1194#1195#0" expanded="true" />
@@ -736,8 +759,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jmh_benchmark/NaiveMapBM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="111" column="68" selection-start-line="111" selection-start-column="68" selection-end-line="111" selection-end-column="68" />
+        <state relative-caret-position="105">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="23" />
           <folding>
             <element signature="e#1027#1028#0" expanded="true" />
             <element signature="e#1091#1092#0" expanded="true" />
@@ -753,21 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/naive_map/NaiveTimedHashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
-          <folding>
-            <element signature="e#587#588#0" expanded="true" />
-            <element signature="e#617#618#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#673#674#0" expanded="true" />
-            <element signature="e#3528#3529#0" expanded="true" />
-            <element signature="e#3588#3589#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
