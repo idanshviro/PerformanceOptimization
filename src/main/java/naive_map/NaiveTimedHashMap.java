@@ -1,48 +1,76 @@
 package naive_map;
 
-import java.util.HashMap;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class NaiveTimedHashMap {
-	public static class TimedHashMap<K, V> {
+    public static class StampedValue<V> {
+        private final V value;
+        private final long stamp;
 
-		HashMap<K, V> hashMap=new HashMap<>();
-		HashMap<K, ScheduledFuture<?>> removalList = new HashMap<>();
-		ScheduledExecutorService scheduled=Executors.newSingleThreadScheduledExecutor();
-		Object lock = new Object();
-		
-		public int size() {
-			return hashMap.size();
-		}
-		public V get(K key) {
-			return hashMap.get(key);
-		}
+        public StampedValue(V value, long stamp) {
+            this.value = value;
+            this.stamp = stamp;
+        }
 
-		public void put(K key, V value, long duration, TimeUnit timeUnit) {
-			Runnable command;
-			synchronized (lock) {
-				hashMap.put(key, value);
-			}
-			
-			synchronized (lock) {
-				 command = (()->{
-					hashMap.remove(key);	
-					});
-			}
+        public V getValue() {
+            return value;
+        }
 
-			ScheduledFuture<?> currentRemoval = scheduled.schedule(command, duration, timeUnit);
-			
-			if(removalList.containsKey(key)) {
-				removalList.get(key).cancel(true);
-			}
-			removalList.put(key, currentRemoval);
-		}
-	}
-	
+        public long getStamp() {
+            return stamp;
+        }
+
+        public static <T> StampedValue<T> of(T value, long stamp) {
+            return new StampedValue<>(value, stamp);
+        }
+    }
+
+
+    public static class TimedHashMap<K, V> {
+        private final ConcurrentMap<K, StampedValue<V>> map = new ConcurrentHashMap<>();
+        private final AtomicLong stampGenerator = new AtomicLong(0);
+        private final ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+        private final Object lockObject = new Object();
+
+        public V get(K key) {
+            StampedValue<V> stamped = map.get(key);
+            if (stamped == null) {
+                return null;
+            } else {
+                return stamped.getValue();
+            }
+        }
+
+        public void put(K key, V value, long duration, TimeUnit timeUnit) {
+            long stamp = stampGenerator.incrementAndGet();
+            StampedValue<V> stamped = StampedValue.of(value, stamp);
+            synchronized (lockObject) {
+                map.put(key, stamped);
+            }
+
+            scheduler.schedule( () -> {
+                deleteIfMatches(key, stamp);
+            }, duration, timeUnit);
+        }
+
+        private void deleteIfMatches(K key, long expectedStamp) {
+            synchronized (lockObject) {
+                if (map.containsKey(key)) {
+                    long currentStamp = map.get(key).getStamp();
+                    if (currentStamp == expectedStamp) {
+                        map.remove(key);
+                    }
+                }
+            }
+        }
+        public int size() {
+            return map.size();
+        }
+
+
+    }
+
     private static final NaiveTimedHashMap.TimedHashMap<String, Integer> map = new NaiveTimedHashMap.TimedHashMap<>();
     public static void main(String... args) throws InterruptedException {
 
@@ -109,12 +137,12 @@ public class NaiveTimedHashMap {
         System.out.println("works as expected");
         System.exit(0);
     }
-	
+
     private static int randomInt() {
         return ThreadLocalRandom.current().nextInt();
     }
-	
-	
-	
-	
+
+
+
+
 }
