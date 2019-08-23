@@ -31,7 +31,7 @@ public class ActorMapBM {
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime,Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
     @Threads(value =1)
@@ -42,7 +42,7 @@ public class ActorMapBM {
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime,Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
     @Threads(value =1)
@@ -53,7 +53,7 @@ public class ActorMapBM {
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime,Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
     @Threads(value =1)
@@ -64,7 +64,7 @@ public class ActorMapBM {
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime,Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
     @Threads(value =1)
@@ -76,7 +76,7 @@ public class ActorMapBM {
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime,Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
     @Threads(value =1)
@@ -88,7 +88,7 @@ public class ActorMapBM {
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime,Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
     @Threads(value =1)
@@ -100,7 +100,7 @@ public class ActorMapBM {
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime,Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
     @Threads(value =1)
@@ -125,7 +125,7 @@ public class ActorMapBM {
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime,Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
     @Threads(value =1)

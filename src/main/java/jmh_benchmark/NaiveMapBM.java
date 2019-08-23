@@ -27,7 +27,7 @@ public class NaiveMapBM {
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime,Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
     @Threads(value =1)
@@ -38,7 +38,7 @@ public class NaiveMapBM {
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime,Mode.AverageTime,Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
     @Threads(value =1)
@@ -49,7 +49,7 @@ public class NaiveMapBM {
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime,Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
     @Threads(value =1)
@@ -60,7 +60,7 @@ public class NaiveMapBM {
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime,Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
     @Threads(value =1)
@@ -72,7 +72,7 @@ public class NaiveMapBM {
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime,Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
     @Threads(value =1)
@@ -84,7 +84,7 @@ public class NaiveMapBM {
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime,Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
     @Threads(value =1)
@@ -96,52 +96,29 @@ public class NaiveMapBM {
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime,Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
-    @Threads(value =1)
+    @Threads(value =2)
     @Warmup(iterations = 2)
     @Measurement(iterations = 4)
     public void putMultiValuesMultiThreads(MyState state) throws InterruptedException {
-
-        Thread t1 = new Thread(()->{
-            for(int i=0; i<100;i++)
+         for(int i=0; i<100;i++)
                 state.map.put(i,i+"",1,TimeUnit.SECONDS);
-        });
 
-        Thread t2 = new Thread(()->{
-            for(int i=100; i<200;i++)
-                state.map.put(i,i+"",1,TimeUnit.SECONDS);
-        });
-        t1.start();
-        t2.start();
-
-        t1.join();
-        t2.join();
     }
 
     @Benchmark
-    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime,Mode.AverageTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Fork(value = 1)
-    @Threads(value =1)
+    @Threads(value =2)
     @Warmup(iterations = 2)
     @Measurement(iterations = 4)
     public void getMultiValuesMultiThreads(MyState state)throws InterruptedException {
-        Thread t1 = new Thread(()->{
             for(int i=0; i<100;i++)
                 Optional.ofNullable(state.map.get(i));
-        });
 
-        Thread t2 = new Thread(()->{
-            for(int i=100; i<200;i++)
-                Optional.ofNullable(state.map.get(i));
-        });
-        t1.start();
-        t2.start();
-
-        t1.join();
-        t2.join();
     }
 
     public static void main(String ...args) throws IOException, RunnerException {
